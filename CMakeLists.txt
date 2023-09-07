@@ -1,10 +1,10 @@
-project(libasd)
+project(topo_libasd)
 cmake_minimum_required(VERSION 3.0)
 enable_testing()
 
 if(MSVC)
     add_definitions("/Zc:__cplusplus") # define __cplusplus value correctly
-    add_definitions("/utf-8")          # enable to use u8"" literal
+    add_definitions("/utf-8") # enable to use u8"" literal
 else()
     add_definitions("-Wall -Wextra -Wpedantic")
 endif()
@@ -12,9 +12,11 @@ endif()
 include_directories(${PROJECT_SOURCE_DIR})
 
 option(LIBASD_BUILD_TESTS ON)
+
 if(LIBASD_BUILD_TESTS)
     # Boost.Test library is used to write test codes.
     find_package(Boost 1.62.0)
+
     if(Boost_FOUND)
         message(STATUS "Boost libraries found in ${Boost_INCLUDE_DIRS}")
         include_directories(${Boost_INCLUDE_DIRS})

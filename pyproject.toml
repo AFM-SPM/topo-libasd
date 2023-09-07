@@ -1,3 +1,22 @@
 [build-system]
-requires = ["setuptools", "wheel", "cmake", ]
+requires = [
+    "setuptools>=45",
+    "setuptools_scm[toml]>=6.2",
+    "wheel",
+    "cmake",
+]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = topo_libasd
+version = 1.5.6
+authors = [{name="Sylvia Whittle", email="sylviwhittle@gmail.com"}]
+description = A fork of the original library to read High Speed AFM data file
+license = {text="LGPL=3.0"}
+dependencies = ["cmake", "wheel"]
+
+[options]
+package = find:
+
+[tool.setuptools_scm]
+write_to = "python/_version.py"

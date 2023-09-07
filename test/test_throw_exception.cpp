@@ -1,5 +1,5 @@
 #define BOOST_TEST_MODULE "test_throw_exception"
-#include <libasd/exception_thrower.hpp>
+#include <topo_libasd/exception_thrower.hpp>
 #include <boost/test/included/unit_test.hpp>
 #include <stdexcept>
 

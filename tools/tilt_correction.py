@@ -14,7 +14,7 @@
 #
 # On ubuntu, you may need to run `sudo apt install python3-tk`.
 
-import libasd
+import topo_libasd
 import tkinter
 import numpy as np
 import matplotlib
@@ -304,7 +304,7 @@ TiltCorrection
                         "filename_background.dat" will have pixels that are used to fit plane (mainly for debugging and reproducibility).
 """)
 
-data = libasd.read_asd(sys.argv[1])
+data = topo_libasd.read_asd(sys.argv[1])
 
 x_pixels = data.header.x_pixel
 y_pixels = data.header.y_pixel

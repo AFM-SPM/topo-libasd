@@ -124,6 +124,8 @@ class CMakeBuild(build_ext):
         )
 
 setup(
-    ext_modules=[CMakeExtension("libasd")],
+    ext_modules=[CMakeExtension("topo_libasd")],
     cmdclass=dict(build_ext=CMakeBuild),
+    setup_requires=["setuptools_scm"],
+    use_scm_version=True,
 )
