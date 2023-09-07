@@ -51,11 +51,14 @@ jobs:
       - name: Build
         run: |
             python setup.py bdist_wheel -p manylinux1_x86_64
+      # - name: Upload
+      #   uses: pypa/gh-action-pypi-publish@release/v1
+      #   with:
+      #       user: __token__
+      #       password: ${{ secrets.pypi_token }}
       - name: Upload
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-            user: __token__
-            password: ${{ secrets.pypi_token }}
+        run: |
+            python -m twine upload --repository testpypi dist/* --username __token__ --password "${{ secrets.pypi_token }}"
   test-windows:
     runs-on: windows-latest
     strategy:
@@ -105,7 +108,7 @@ jobs:
             python setup.py bdist_wheel
       - name: Upload
         run: |
-            python -m twine upload dist/* --username __token__ --password "${{ secrets.pypi_token }}"
+            python -m twine upload --repository testpypi dist/* --username __token__ --password "${{ secrets.pypi_token }}"
   test-macos:
     runs-on: macos-latest
     steps:
@@ -150,7 +153,7 @@ jobs:
             python setup.py bdist_wheel
       - name: Upload
         run: |
-            python -m twine upload dist/* --username __token__ --password "${{ secrets.pypi_token }}"
+            python -m twine upload --repository testpypi dist/* --username __token__ --password "${{ secrets.pypi_token }}"
   upload-source:
     runs-on: ubuntu-latest
     steps:
@@ -171,4 +174,4 @@ jobs:
             python setup.py sdist
       - name: Upload
         run: |
-            python -m twine upload dist/* --username __token__ --password "${{ secrets.pypi_token }}"
+            python -m twine upload --repository testpypi dist/* --username __token__ --password "${{ secrets.pypi_token }}"
