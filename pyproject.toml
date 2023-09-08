@@ -7,6 +7,7 @@ dynamic = ["version"]
 name = "topo_libasd"
 authors = [{ name = "Sylvia Whittle", email = "sylviwhittle@gmail.com" }]
 description = "A fork of the original library to read High Speed AFM data file"
+readme = "README.md"
 license = { text = "LGPL=3.0" }
 dependencies = ["cmake", "wheel"]
 
