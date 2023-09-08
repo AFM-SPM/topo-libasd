@@ -47,7 +47,7 @@ jobs:
             architecture: x64
       - name: Install
         run: |
-            python install .[pypi]
+            pip install .[pypi]
       - name: Build
         run: |
             python -m build --no-isolation
@@ -110,7 +110,7 @@ jobs:
             architecture: x64
       - name: Install
         run: |
-            python install .[pypi]
+            pip install .[pypi]
       - name: Build
         run: |
             python -m build --no-isolation
@@ -155,7 +155,7 @@ jobs:
             architecture: x64
       - name: Install
         run: |
-            python install .[pypi]
+            pip install .[pypi]
       - name: Build
         run: |
             python -m build --no-isolation
@@ -176,7 +176,7 @@ jobs:
             architecture: x64
       - name: Install
         run: |
-            python install .[pypi]
+            pip install .[pypi]
       - name: Build
         run: |
             python setup.py sdist
