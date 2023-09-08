@@ -10,6 +10,15 @@ description = "A fork of the original library to read High Speed AFM data file"
 license = { text = "LGPL=3.0" }
 dependencies = ["cmake", "wheel"]
 
+[project.optional-dependencies]
+pypi = [
+  "build",
+  "cmake",
+  "setuptools_scm[toml]",
+  "twine",
+  "wheel",
+]
+
 [tool.setuptools.packages.find]
 where = ["."]
 
