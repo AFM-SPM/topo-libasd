@@ -50,7 +50,7 @@ jobs:
             pip install .[pypi]
       - name: Build
         run: |
-            python -m build --no-isolation
+            python -m build --wheel --no-isolation
       - name: Upload
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
@@ -113,7 +113,7 @@ jobs:
             pip install .[pypi]
       - name: Build
         run: |
-            python -m build --no-isolation
+            python -m build --wheel --no-isolation
       - name: Upload
         run: |
             python -m twine upload --repository testpypi dist/* --username __token__ --password "${{ secrets.pypi_token }}"
@@ -158,7 +158,7 @@ jobs:
             pip install .[pypi]
       - name: Build
         run: |
-            python -m build --no-isolation
+            python -m build --wheel --no-isolation
       - name: Upload
         run: |
             python -m twine upload --repository testpypi dist/* --username __token__ --password "${{ secrets.pypi_token }}"
@@ -179,7 +179,7 @@ jobs:
             pip install .[pypi]
       - name: Build
         run: |
-            python setup.py sdist
+            python -m build --sdist --no-isolation
       - name: Upload
         run: |
             python -m twine upload --repository testpypi dist/* --username __token__ --password "${{ secrets.pypi_token }}"
