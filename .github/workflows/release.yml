@@ -114,11 +114,8 @@ jobs:
         run: |
             python -m build --wheel --no-isolation
       - name: Upload
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-            repository-url: https://test.pypi.org/legacy/
-            user: __token__
-            password: ${{ secrets.pypi_token }}
+        run: |
+            python -m twine upload dist/* --username __token__ --password "${{ secrets.pypi_token }}"
   # test-macos:
   #   runs-on: macos-latest
   #   steps:
