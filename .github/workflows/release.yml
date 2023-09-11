@@ -110,6 +110,7 @@ jobs:
       - name: Install
         run: |
             pip install .[pypi]
+            pip install --upgrade setuptools
       - name: Build
         run: |
             python -m build --wheel --no-isolation
