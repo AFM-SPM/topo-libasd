@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel", "cmake"]
+requires = ["setuptools>=45", "wheel", "cmake"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,7 +8,7 @@ name = "topo_libasd"
 authors = [{ name = "Sylvia Whittle", email = "sylviwhittle@gmail.com" }]
 description = "A fork of the original library to read High Speed AFM data file"
 readme = "README.md"
-license = { text = "LGPL=3.0" }
+license = { text = "LGPL-3.0" }
 dependencies = ["cmake", "wheel"]
 
 [project.optional-dependencies]
@@ -17,6 +17,6 @@ pypi = ["build", "cmake", "setuptools_scm[toml]", "twine", "wheel"]
 [tool.setuptools.packages.find]
 where = ["."]
 
-[tool.setuptools_scm]
-write_to = "python/_version.py"
-version_scheme = "release-branch-semver"
+# [tool.setuptools_scm]
+# write_to = "python/_version.py"
+# version_scheme = "release-branch-semver"
