@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel", "cmake"]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel", "cmake"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -19,3 +19,4 @@ where = ["."]
 
 [tool.setuptools_scm]
 write_to = "python/_version.py"
+version_scheme = "release-branch-semver"
