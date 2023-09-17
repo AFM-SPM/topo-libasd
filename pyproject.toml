@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel", "cmake"]
+requires = ["setuptools", "setuptools_scm[toml]>=6.2", "wheel", "cmake"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -12,13 +12,7 @@ license = { text = "LGPL=3.0" }
 dependencies = ["cmake", "wheel"]
 
 [project.optional-dependencies]
-pypi = [
-  "build",
-  "cmake",
-  "setuptools_scm[toml]",
-  "twine",
-  "wheel",
-]
+pypi = ["build", "cmake", "setuptools_scm[toml]", "twine", "wheel"]
 
 [tool.setuptools.packages.find]
 where = ["."]
